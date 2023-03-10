@@ -1,0 +1,568 @@
+{
+	"info": {
+		"_postman_id": "2976e1d4-ec69-40cb-bbfa-50908db22487",
+		"name": "clinica-prueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25442685"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n   \"email\": \"hospital@gmail.com\",\r\n   \"phone\": \"12345\",\r\n   \"password\": \"12345\",\r\n   \"role\": \"HOSPITAL\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activar-cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otpSecret\":\"3e97737d-d289-4115-8a9a-bfd1935ad23d\",\r\n    \"email\":\"hospital@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/user/activar",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"activar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cambio-contraseña",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imhvc3BpdGFsMUBnbWFpbC5jb20iLCJzdWIiOiI2YmM2ZGNhNC05ZTU3LTQ3MjMtODAyMi04ZjA1OTYzM2VhMTEiLCJpYXQiOjE2Nzg0ODExOTQsImV4cCI6MTY3ODQ4NDc5NH0.bswI0Zl8oqtcuJvAtex22g5FYp4FPQU889dMbaVHgjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"hospital1@gmail.com\",\r\n    \"passwordOld\":\"123456\",\r\n    \"passwordNew\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/user/cambio-password",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"cambio-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "todos los usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/user/",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"medico@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cerrar sesion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/auth/salir",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"salir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accede al perfil mediante token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhY2llbnRlQGdtYWlsLmNvbSIsInN1YiI6IjZjYjJjM2MzLTVlZjQtNDZhZC1iN2IxLTNlY2Y5MjRkMzY0MSIsImlhdCI6MTY3ODQ3NTgxMiwiZXhwIjoxNjc4NDc5NDEyfQ.FTrUZYDIYu0-3_frjzsmPc8yGHANMb21Ee47tp1hfds",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/auth/perfil",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"perfil"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hospital",
+			"item": [
+				{
+					"name": "buscar-historial-hospital-por-id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imhvc3BpdGFsQGdtYWlsLmNvbSIsInN1YiI6ImRmYTRhYmVhLTEzNTUtNGZiMC04ODg4LTE5YjkxOTQ0NGE3YyIsImlhdCI6MTY3ODQ4Njg2MCwiZXhwIjoxNjc4NDkwNDYwfQ.Rv4jcyKlGCeEeimrEhczVW6mwv9jKtgq5pk2nye3Zb8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/hospital/historial/7dc8d955-f40b-4abb-9648-302550f816e4",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"hospital",
+								"historial",
+								"7dc8d955-f40b-4abb-9648-302550f816e4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-hospital-por-usuario-rol-hospital",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imhvc3BpdGFsQGdtYWlsLmNvbSIsInN1YiI6ImRmYTRhYmVhLTEzNTUtNGZiMC04ODg4LTE5YjkxOTQ0NGE3YyIsImlhdCI6MTY3ODQ4NTg2NiwiZXhwIjoxNjc4NDg5NDY2fQ.AxgOt8Ro6uKStZ6lGsm-wN0sX7-mPN6S8-M1bPFaKwI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Omer castañer\",\r\n    \"address\": \"azogues\",\r\n    \"services\": \"servicio 1\",\r\n    \"user\": {\r\n        \"id\": \"be587db9-16ac-4fa8-bfef-057c200d8f9d\" \r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/hospital",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"hospital"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "paciente",
+			"item": [
+				{
+					"name": "crear-paciente-por-usuario-paciente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhY2llbnRlQGdtYWlsLmNvbSIsInN1YiI6IjIwODU5MDYxLTNiMjgtNGM4MS04OTI2LTlhZjExZWQzNDlmNSIsImlhdCI6MTY3ODQ4Njk4NiwiZXhwIjoxNjc4NDkwNTg2fQ.zpQygR6qfqu1_QNItpzCHrApqBqpTGYugo1KtY0bFTY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"carlos\",\r\n    \"address\":\"ecuador\",\r\n    \"dateOfBirth\":\"1995-03-10T00:00:00.000Z\",\r\n    \"user\":{    \r\n         \"id\": \"be587db9-16ac-4fa8-bfef-057c200d8f9d\"      \r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/paciente",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"paciente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "historial-clinico-paciente-por-id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhY2llbnRlQGdtYWlsLmNvbSIsInN1YiI6IjIwODU5MDYxLTNiMjgtNGM4MS04OTI2LTlhZjExZWQzNDlmNSIsImlhdCI6MTY3ODQ4Njk4NiwiZXhwIjoxNjc4NDkwNTg2fQ.zpQygR6qfqu1_QNItpzCHrApqBqpTGYugo1KtY0bFTY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/paciente/historial/ed32e113-3fbd-40eb-ab52-aed55cd0c2c6",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"paciente",
+								"historial",
+								"ed32e113-3fbd-40eb-ab52-aed55cd0c2c6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "doctor",
+			"item": [
+				{
+					"name": "crear-doctor -por-usuario-hospital",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imhvc3BpdGFsQGdtYWlsLmNvbSIsInN1YiI6ImRmYTRhYmVhLTEzNTUtNGZiMC04ODg4LTE5YjkxOTQ0NGE3YyIsImlhdCI6MTY3ODQ4NzIzMiwiZXhwIjoxNjc4NDkwODMyfQ.Jo-ImzRmJ4nSewVVciCJ6xy6vwBbpvb3UKcDgGC1nqk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"juan\",\r\n    \"lastName\": \"daniel\",\r\n    \"address\": \"azogues\",\r\n    \"specialty\": \"odontologo\",\r\n    \"user\": {\r\n        \"email\": \"docto23@gmail.com\",\r\n        \"phone\": \"12\",\r\n        \"password\": \"12345\",\r\n        \"role\": \"DOCTOR\"\r\n    },\r\n    \"hospital\": {\r\n        \"id\": \"7dc8d955-f40b-4abb-9648-302550f816e4\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/doctor",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"doctor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "historial-medico-rol-medico-por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1lZGljb0BnbWFpbC5jb20iLCJzdWIiOiJiZTU4N2RiOS0xNmFjLTRmYTgtYmZlZi0wNTdjMjAwZDhmOWQiLCJpYXQiOjE2Nzg0ODc2MjcsImV4cCI6MTY3ODQ5MTIyN30.yVigrYyPASABeJMGMsgIRodvldR0RmqZla24P4gpgLw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/doctor/historial/b4fcf809-8bdc-4ac6-86dd-ae392f3af390",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"doctor",
+								"historial",
+								"b4fcf809-8bdc-4ac6-86dd-ae392f3af390"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "historial-clinico",
+			"item": [
+				{
+					"name": "crear-observacion.-clinica-rol-doctor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1lZGljb0BnbWFpbC5jb20iLCJzdWIiOiJiZTU4N2RiOS0xNmFjLTRmYTgtYmZlZi0wNTdjMjAwZDhmOWQiLCJpYXQiOjE2Nzg0ODc4ODksImV4cCI6MTY3ODQ5MTQ4OX0.tcglnccnu5u4aPyRtW0Qn_67Oxc95aEKWQvO_t5NmOU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"doctor\": {\r\n        \"id\": \"b4fcf809-8bdc-4ac6-86dd-ae392f3af390\"\r\n    },\r\n    \"patient\": {\r\n        \"id\": \"ed32e113-3fbd-40eb-ab52-aed55cd0c2c6\"\r\n    },\r\n    \"observations\": \"se encuntra clinito\",\r\n    \"healthStatus\": \"peligro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/historial-clinico",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"historial-clinico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cualquier usuario autentificado puede ver el historial clinico",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imhvc3BpdGFsMUBnbWFpbC5jb20iLCJzdWIiOiI2YmM2ZGNhNC05ZTU3LTQ3MjMtODAyMi04ZjA1OTYzM2VhMTEiLCJpYXQiOjE2Nzg0ODExOTQsImV4cCI6MTY3ODQ4NDc5NH0.bswI0Zl8oqtcuJvAtex22g5FYp4FPQU889dMbaVHgjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/historial-clinico",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"historial-clinico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "historialDelDoctor-idDoctor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/v1/historial-clinico/ba6de524-c04b-48a9-ad28-55fbc13d790a",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"historial-clinico",
+								"ba6de524-c04b-48a9-ad28-55fbc13d790a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
