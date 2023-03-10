@@ -24,7 +24,14 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) Este proyecto esta echo con nestJs, TypeOrm y postgres v.14
+las pruebas de los endpoint se encuentran en la carpeta doc llamada pruebas-peticiones-juan-buri.json
+
+para que el sistema funcione se requier modificar el .env
+
+## Diseño de la base de datos
+
+<img src="https://firebasestorage.googleapis.com/v0/b/proyectofinal-129ab.appspot.com/o/Captura.PNG?alt=media&token=79e4046d-cfe0-4e9e-b141-fc3ed9160a85"/>
 
 ## Installation
 
