@@ -29,9 +29,25 @@ las pruebas de los endpoint se encuentran en la carpeta doc llamada pruebas-peti
 
 para que el sistema funcione se requier modificar el .env
 
+# Algunas de las funcionalidades
+
+-El sistema cuenta con jwt para la autentificación del sistema
+-Logeo validado con usario y contraseña
+-cambio de contraseña
+-activar cuenta
+-y muchas otras funciones que se encuentra en la carpeta doc
+
+<img src="https://firebasestorage.googleapis.com/v0/b/proyectofinal-129ab.appspot.com/o/imagen_2023-03-10_185231454.png?alt=media&token=717dd917-afe7-4382-9c95-aaa692d479ba"/>
+
 ## Diseño de la base de datos
 
 <img src="https://firebasestorage.googleapis.com/v0/b/proyectofinal-129ab.appspot.com/o/Captura.PNG?alt=media&token=79e4046d-cfe0-4e9e-b141-fc3ed9160a85"/>
+
+## El proyecto tambien cuenta con su respectiva documentacion
+
+http://localhost:3000/api/docs
+
+  <img src="https://firebasestorage.googleapis.com/v0/b/proyectofinal-129ab.appspot.com/o/imagen_2023-03-10_184835458.png?alt=media&token=54626958-92a5-479f-b3cc-32d405a77da1"/>
 
 ## Installation
 

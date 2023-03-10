@@ -8,6 +8,10 @@ import { User } from './infraestructure/user.entity';
 import { MedicalHistoryModule } from './medical-history/medical-history.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
+import { Doctor } from './infraestructure/doctor.entity';
+import { Patient } from './infraestructure/patient.entity';
+import { Hospital } from './infraestructure/hospital.entity';
+import { MedicalHistory } from './infraestructure/medical-history.entity';
 
 @Module({
   imports: [
@@ -19,7 +23,7 @@ import { ConfigModule } from '@nestjs/config';
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [User],
+      entities: [User, Doctor, Patient, Hospital, MedicalHistory],
       synchronize: true,
       autoLoadEntities: true,
     }),
